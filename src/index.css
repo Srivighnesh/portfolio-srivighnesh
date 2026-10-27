@@ -1,0 +1,344 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Alfa+Slab+One&family=Bevan:ital@0;1&family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Kavoon&display=swap');
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #e3e4e500;
+    background-image: url('public/Image/Bg-Image.jfif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0) 100%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+  h2 {
+    color: #f0f9ff;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  h3{
+      font-family: "Bitcount Grid Double", system-ui;
+      font-optical-sizing: auto;
+      font-weight: 100px;
+      font-style: normal;
+      font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+  }
+
+  .hero-h1{
+      font-family: "Kavoon", serif;
+      font-weight: 400;
+      font-style: normal;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  .cards-h2{
+  font-family: "Jockey One", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  }
+}
+/* Hero Name */
+.hero-name {
+  font-size: 1.8rem;
+  font-family: 'Alfa Slab One', cursive;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-align: center;
+  animation: rgbSoftGlow 6s infinite linear;
+}
+
+/* Hero Subtitle */
+.hero-h3 {
+  font-size: 1rem;
+  text-align: center;
+  color: transparent;
+  background: linear-gradient(to right, #93c5fd, #fcd34d);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .hero-name {
+    font-size: 3.5rem;
+  }
+
+  .hero-h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Laptops & Desktops */
+@media (min-width: 1024px) {
+  .hero-name {
+    font-size: 4.5rem;
+  }
+
+  .hero-h3 {
+    font-size: 1.875rem;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1440px) {
+  .hero-name {
+    font-size: 5.5rem;
+  }
+
+  .hero-h3 {
+    font-size: 2.25rem;
+  }
+}
+
+
+/* Softer RGB Lighting Animation */
+@keyframes rgbSoftGlow {
+  0% {
+    color: rgb(255, 80, 120);
+    text-shadow: 0 0 8px rgba(255, 80, 120, 0.4);
+  }
+  25% {
+    color: rgb(80, 180, 255);
+    text-shadow: 0 0 8px rgba(80, 180, 255, 0.4);
+  }
+  50% {
+    color: rgb(180, 120, 255);
+    text-shadow: 0 0 8px rgba(180, 120, 255, 0.4);
+  }
+  75% {
+    color: rgb(80, 255, 180);
+    text-shadow: 0 0 8px rgba(80, 255, 180, 0.4);
+  }
+  100% {
+    color: rgb(255, 80, 120);
+    text-shadow: 0 0 8px rgba(255, 80, 120, 0.4);
+  }
+}
+/* Glass-morphism effect */
+.glass-effect {
+  background: rgba(65, 66, 66, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(205, 234, 235, 0.135);
+}
+
+.glass-effect-skill {
+  background: rgba(65, 66, 66, 0);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(205, 234, 235, 0.135);
+}
+
+/* RGB Border Animation */
+@keyframes rgb-border-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.rgb-border-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  height: 2px;
+  background: linear-gradient(
+    270deg,
+    #fbbf24,
+    #f59e0b,
+    #ec4899,
+    #8b5cf6,
+    #fbbf24
+  );
+  background-size: 400% 400%;
+  animation: rgb-border-flow 8s linear infinite;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.rgb-border-skills::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  z-index: 0;
+  padding: 2px;
+  background: linear-gradient(
+    270deg,
+    #fbbf24,
+    #f59e0b,
+    #ec4899,
+    #8b5cf6,
+    #fbbf24
+  );
+  background-size: 400% 400%;
+  animation: rgb-border-flow 8s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: brightness(0.8) saturate(1);
+}
+
+/* Gradient button hover effect */
+.btn-gradient {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2);
+}
+
+.btn-gradient:hover {
+  box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Border gradient */
+.border-gradient {
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.3), transparent);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(251, 191, 36, 0.15);
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #fbbf24 0%, #ec4899 50%, #8b5cf6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Section styling */
+section {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+
+}
+
+@keyframes scrollFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll animation for elements
+   - Elements should have the `scroll-animate` class (added automatically by the JS observer)
+   - When the element enters the viewport the `in-view` class is added which triggers the transition
+*/
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(.2,.8,.2,1), transform 0.6s cubic-bezier(.2,.8,.2,1);
+  will-change: opacity, transform;
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate[data-sr-anim="fade"] {
+  animation: scrollFadeIn 0.6s ease forwards;
+}
+
+.scroll-animate[data-sr-anim="float"] {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Directional entrance variants for a dispersed/modern look */
+.scroll-animate.sr-left {
+  transform: translateX(-40px) translateY(10px) rotate(-2deg);
+}
+.scroll-animate.sr-right {
+  transform: translateX(40px) translateY(10px) rotate(2deg);
+}
+.scroll-animate.sr-up {
+  transform: translateY(40px) translateX(6px) rotate(-0.5deg);
+}
+.scroll-animate.sr-down {
+  transform: translateY(-40px) translateX(6px) rotate(0.5deg);
+}
+.scroll-animate.sr-zoom {
+  transform: translateY(10px) scale(0.92) rotate(-1deg);
+}
+
+/* When in view, reset transforms smoothly */
+.scroll-animate.in-view.sr-left,
+.scroll-animate.in-view.sr-right,
+.scroll-animate.in-view.sr-up,
+.scroll-animate.in-view.sr-down,
+.scroll-animate.in-view.sr-zoom {
+  transform: translateX(0) translateY(0) scale(1) rotate(0);
+}
+
+/* Slightly larger staggerable duration for grid children */
+.grid > * {
+  transition-delay: var(--sr-delay, 0ms);
+}
+
+/* Staggered animation for grid items */
+.grid > * {
+  opacity: 1;
+}
+
+
